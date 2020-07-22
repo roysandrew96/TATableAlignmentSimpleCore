@@ -69,3 +69,76 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Styles to support Table Layout Example */
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.row {
+    display: table-row;
+}
+
+.menuCell {
+    display: table-cell;
+    border: solid;
+    border-width: thin;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 20%;
+    background-color: greenyellow;
+    min-width: 150px;
+}
+
+.contentCell {
+  display: table-cell;
+  border: solid;
+  border-width: thin;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  width: 80%;
+  background-color: aqua;
+}
+
+.paramNameCell {
+    font-family: Courier New, Courier, monospace;
+    text-align: left;
+    display: table-cell;
+    border: solid;
+    border-width: thin;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 40%;
+    min-width: 150px;
+}
+
+.paramValueCell {
+    font-family: Courier New, Courier, monospace;
+    text-align: center;
+    display: table-cell;
+    border: solid;
+    border-width: thin;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    width: 10%;
+}
+
+.buttonCell {
+    display: table-cell;
+    text-align: center;
+    vertical-align:middle;
+    border: none;
+    padding-top: 40px;
+    column-span: all;
+    width: 100%;
+    background-color: none;
+    align-content: center;
+}

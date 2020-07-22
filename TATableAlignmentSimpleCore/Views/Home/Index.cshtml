@@ -2,7 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1>Simple Table Alignment using Divs</h1>
+<div class="table">
+    <div class="row">
+        <div class="menuCell" id="TheMenuCell">The Menu Cell</div>
+        <div class="contentCell" id="TheContentCell">The Content Cell</div>
+    </div>
+</div>
+<div class="table">
+    <div class="row">
+        <div class="buttonCell">
+            <input id="AddMoreContentButton" type="button" value="Add More Content" onclick="addContent()" />
+        </div>
+    </div>
+</div>
+<div class="table">
+    <div class="row">
+        <div class="paramNameCell">Percentage of Left Hand Column</div>
+        <div class="paramValueCell"><input id="leftHandColumnPercentage" type="number" min="10" max="90" value="20" onchange="updateTableColumnWidth( this, document.getElementById('rightHandColumnPercentage'), 'menuCell', true)" )" /></div>
+        <div class="paramNameCell">Percentage of Right Hand Column</div>
+        <div class="paramValueCell"><input id="rightHandColumnPercentage" type="number" min="10" max="90" value="80" onchange="updateTableColumnWidth( this, document.getElementById('leftHandColumnPercentage'), 'contentCell', true)" )" /></div>
+    </div>
 </div>
