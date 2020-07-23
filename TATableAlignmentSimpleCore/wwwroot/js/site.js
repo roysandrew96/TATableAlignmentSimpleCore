@@ -19,7 +19,7 @@ function updateTableColumnWidth(textBox1, textBox2, cssName, cascadeUpdate) {
     var textBoxValue = textBox1.value;
     var textBoxIntValue = parseInt(textBoxValue);
 
-    console.log("percentage column width = ", textBoxValue);
+    console.log("textbox value = ", textBoxValue);
     console.log("document.styleSheets = ", document.styleSheets);
     console.log("document.styleSheets.length = ", document.styleSheets.length);
     for (var i = 0; i < document.styleSheets.length; i++) {
@@ -48,6 +48,46 @@ function updateTableColumnWidth(textBox1, textBox2, cssName, cascadeUpdate) {
                             } else {
                                 updateTableColumnWidth(textBox2, textBox1, "menuCell", false);
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+function setCSSRulePropertyValue( cssStyleName, cssPropertyName, newValue, propertySuffix) {
+    var textBoxValue = newValue.value;
+    var propertyNewValue = textBoxValue;
+    if (propertySuffix)
+    {
+        propertyNewValue = propertyNewValue.concat( propertySuffix.toString() );
+    }
+
+    console.log("percentage column width = ", textBoxValue);
+    console.log("document.styleSheets = ", document.styleSheets);
+    console.log("document.styleSheets.length = ", document.styleSheets.length);
+    for (var i = 0; i < document.styleSheets.length; i++) {
+        var sheet = document.styleSheets[i];
+        //////////////////////////////////////////////////////
+        // We only want to look inside the site.css file ...
+        //////////////////////////////////////////////////////
+        var isSiteCSS = sheet.href.includes("site.css");
+        console.log("is Site CSS = ", isSiteCSS);
+        if (isSiteCSS) {
+            console.log("Number of Rules = ", sheet.cssRules.length);
+            for (var j = 0; j < sheet.cssRules.length; j++) {
+                var rule = sheet.cssRules[j];
+                console.log('Rule = ', rule);
+                var selText = rule.selectorText;
+                if (selText) {
+                    var selTextU = selText.toUpperCase();
+                    console.log("selectorText = ", selTextU);
+                    var cssN = cssStyleName.toUpperCase();
+                    if (selTextU.includes(cssN)) {
+                        switch(cssPropertyName){
+                            case 'minWidth', 'min-width':
+                                sheet.cssRules[j].style.minWidth = propertyNewValue;
                         }
                     }
                 }

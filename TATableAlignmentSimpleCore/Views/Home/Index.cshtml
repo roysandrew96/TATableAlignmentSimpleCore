@@ -19,8 +19,12 @@
 <div class="table">
     <div class="row">
         <div class="paramNameCell">Percentage of Left Hand Column</div>
-        <div class="paramValueCell"><input id="leftHandColumnPercentage" type="number" min="10" max="90" value="20" onchange="updateTableColumnWidth( this, document.getElementById('rightHandColumnPercentage'), 'menuCell', true)" )" /></div>
+        <div class="paramValueCell"><input id="leftHandColumnPercentage" type="number" min="10" max="90" value="20" onchange="updateTableColumnWidth( this, document.getElementById('rightHandColumnPercentage'), 'menuCell', true)" /></div>
         <div class="paramNameCell">Percentage of Right Hand Column</div>
-        <div class="paramValueCell"><input id="rightHandColumnPercentage" type="number" min="10" max="90" value="80" onchange="updateTableColumnWidth( this, document.getElementById('leftHandColumnPercentage'), 'contentCell', true)" )" /></div>
+        <div class="paramValueCell"><input id="rightHandColumnPercentage" type="number" min="10" max="90" value="80" onchange="updateTableColumnWidth( this, document.getElementById('leftHandColumnPercentage'), 'contentCell', true)" /></div>
+    </div>
+    <div class="row">
+        <div class="paramNameCell">Minimum Width of Left Hand Cell</div>
+        <div class="paramValueCell"><input id="leftHandColumnMinWidth" type="number" min="100" max="300" value="150" onchange="setCSSRulePropertyValue( 'menuCell', 'minWidth', document.getElementById('leftHandColumnMinWidth'), 'px' )" /></div>
     </div>
 </div>
