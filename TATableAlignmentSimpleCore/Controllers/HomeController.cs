@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TATableAlignmentSimpleCore.Models;
+using System.Web;
 
 namespace TATableAlignmentSimpleCore.Controllers
 {
@@ -19,7 +20,7 @@ namespace TATableAlignmentSimpleCore.Controllers
         }
 
         public IActionResult Index()
-        {
+        { 
             return View();
         }
 

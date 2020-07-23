@@ -3,7 +3,7 @@
 }
 
 <h1>Simple Table Alignment using Divs</h1>
-<div class="table">
+<div class="tableFullWidth">
     <div class="row">
         <div class="menuCell" id="TheMenuCell">The Menu Cell</div>
         <div class="contentCell" id="TheContentCell">The Content Cell</div>
@@ -11,20 +11,35 @@
 </div>
 <div class="table">
     <div class="row">
+        <div class="minWidthCell" id="TheMinWidthCell">Minimum Width</div>
+        <div class="minRemainderCell"></div>
+    </div>
+</div>
+<div class="tableFullWidth">
+    <div class="row">
         <div class="buttonCell">
             <input id="AddMoreContentButton" type="button" value="Add More Content" onclick="addContent()" />
         </div>
     </div>
 </div>
-<div class="table">
+<div class="tableFullWidth">
     <div class="row">
-        <div class="paramNameCell">Percentage of Left Hand Column</div>
-        <div class="paramValueCell"><input id="leftHandColumnPercentage" type="number" min="10" max="90" value="20" onchange="updateTableColumnWidth( this, document.getElementById('rightHandColumnPercentage'), 'menuCell', true)" /></div>
-        <div class="paramNameCell">Percentage of Right Hand Column</div>
-        <div class="paramValueCell"><input id="rightHandColumnPercentage" type="number" min="10" max="90" value="80" onchange="updateTableColumnWidth( this, document.getElementById('leftHandColumnPercentage'), 'contentCell', true)" /></div>
+        <div class="paramNameCell">Percentage Width of Left Hand Column</div>
+        <div class="paramValueCell"><input id="leftHandColumnPercentage" type="number" min="10" max="90" value="20" onchange="updateTableColumnWidth( this, document.getElementById('rightHandColumnPercentage'), 'menuCell', true)" />&nbsp;<strong>%</strong></div>
+        <div class="paramNameCell">Percentage Width of Right Hand Column</div>
+        <div class="paramValueCell"><input id="rightHandColumnPercentage" type="number" min="10" max="90" value="80" onchange="updateTableColumnWidth( this, document.getElementById('leftHandColumnPercentage'), 'contentCell', true)" />&nbsp;<strong>%</strong></div>
     </div>
     <div class="row">
-        <div class="paramNameCell">Minimum Width of Left Hand Cell</div>
-        <div class="paramValueCell"><input id="leftHandColumnMinWidth" type="number" min="100" max="300" value="150" onchange="setCSSRulePropertyValue( 'menuCell', 'minWidth', document.getElementById('leftHandColumnMinWidth'), 'px' )" /></div>
+        <div class="paramNameCell">Minimum Pixel Width of Left Hand Cell</div>
+        <div class="paramValueCell"><input id="leftHandColumnMinWidth" type="number" min="100" max="300" value="150" onchange="setCSSRulePropertyValue( 'menuCell', 'minWidth', document.getElementById('leftHandColumnMinWidth'), 'px' )" />&nbsp;<strong>px</strong></div>
+    </div>
+    <div class="row">
+        <div class="paramNameCell">Menu Cell Background Color</div>
+        <div class="paramValueCell">
+            <select id="menuCellBGColorSelect">
+            </select>
+        </div>
+        <div class="paramNameCell">Content Cell Background Color</div>
+        <div class="paramValueCell"></div>
     </div>
 </div>

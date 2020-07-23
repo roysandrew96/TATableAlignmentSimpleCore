@@ -85,10 +85,13 @@ function setCSSRulePropertyValue( cssStyleName, cssPropertyName, newValue, prope
                     console.log("selectorText = ", selTextU);
                     var cssN = cssStyleName.toUpperCase();
                     if (selTextU.includes(cssN)) {
-                        switch(cssPropertyName){
-                            case 'minWidth', 'min-width':
+                        switch(cssPropertyName.toUpperCase()){
+                            case 'MINWIDTH':
+                            case 'MIN-WIDTH':
                                 sheet.cssRules[j].style.minWidth = propertyNewValue;
                         }
+                    } else if (selTextU.includes("MINWIDTHCELL")) {
+                        sheet.cssRules[j].style.width = propertyNewValue;
                     }
                 }
             }

@@ -72,9 +72,13 @@ body {
 
 /* Styles to support Table Layout Example */
 
-.table {
+.tableFullWidth {
     display: table;
     width: 100%;
+}
+
+.table {
+  display: table;
 }
 
 .row {
@@ -90,6 +94,32 @@ body {
     width: 20%;
     background-color: greenyellow;
     min-width: 150px;
+}
+
+.minWidthCell {
+  display: table-cell;
+  font-size: x-small;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 150px;
+  background-color: purple;
+  color: white;
+}
+
+.minRemainderCell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .contentCell {
@@ -112,8 +142,8 @@ body {
     border-width: thin;
     padding-left: 5px;
     padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 40%;
     min-width: 150px;
 }
@@ -124,10 +154,10 @@ body {
     display: table-cell;
     border: solid;
     border-width: thin;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     width: 10%;
 }
 
@@ -136,7 +166,8 @@ body {
     text-align: center;
     vertical-align:middle;
     border: none;
-    padding-top: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     column-span: all;
     width: 100%;
     background-color: none;
