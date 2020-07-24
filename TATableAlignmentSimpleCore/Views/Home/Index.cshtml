@@ -37,16 +37,18 @@
         <div class="paramNameCell">Menu Cell Background Color</div>
         <div class="paramValueCell">
             <select id="menuCellBGColorSelect">
-                @{
-                    var colorList = ViewBag.htmlColorList;
-                    foreach( string s in colorList)
-                    {
-                        <option>@s</option>
-                    }
-                }
+                <option>Blue</option>
+                <option>Red</option>
+                <option>Green</option>
             </select>
         </div>
         <div class="paramNameCell">Content Cell Background Color</div>
-        <div class="paramValueCell"></div>
+        <div class="paramValueCell">
+            <select id="contentCellBGColorSelect">
+                <option>Blue</option>
+                <option>Red</option>
+                <option>Green</option>
+            </select>
+        </div>
     </div>
 </div>

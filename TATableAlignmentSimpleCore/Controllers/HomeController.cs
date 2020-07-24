@@ -1,4 +1,14 @@
-﻿using System;
+﻿using System.Collections.Specialized;
+using System.Reflection.PortableExecutable;
+using System.Transactions;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices;
+using System.Reflection.Emit;
+using System.Data.SqlTypes;
+using System.ComponentModel;
+using System.Text;
+using System.Runtime.InteropServices;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,8 +29,25 @@ namespace TATableAlignmentSimpleCore.Controllers
             _logger = logger;
         }
 
+        private static String[] colorNames = {
+            "Red",
+            "Green",
+            "Blue"
+        };
+
+        private static StringBuilder sb = new StringBuilder();
+
+        public static string BuildColorList() {
+            foreach (string color in colorNames)
+            {
+                sb.Append(String.Format("<option>{0}</option>", color));
+            }
+            return sb.ToString();
+        }
+
         public IActionResult Index()
         { 
+
             return View();
         }
 
