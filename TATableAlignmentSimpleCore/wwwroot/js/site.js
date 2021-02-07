@@ -56,7 +56,8 @@ function updateTableColumnWidth(textBox1, textBox2, cssName, cascadeUpdate) {
     }
 }
 
-function setCSSRulePropertyValue( cssStyleName, cssPropertyName, newValue, propertySuffix) {
+function setCSSRulePropertyValue( cssStyleName, cssPropertyName, newValue, propertySuffix)
+{
     var textBoxValue = newValue.value;
     var propertyNewValue = textBoxValue;
     if (propertySuffix)

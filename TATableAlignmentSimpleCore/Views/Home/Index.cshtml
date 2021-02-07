@@ -44,7 +44,7 @@
         </div>
         <div class="paramNameCell">Content Cell Background Color</div>
         <div class="paramValueCell">
-            <select id="contentCellBGColorSelect">
+            <select id="contentCellBGColorSelect" onchange="setCSSRulePropertyValue( 'menuCell', 'background-color', document.getElementById('contentCellBGColorSelect'), '' )" >
                 <option>Blue</option>
                 <option>Red</option>
                 <option>Green</option>
