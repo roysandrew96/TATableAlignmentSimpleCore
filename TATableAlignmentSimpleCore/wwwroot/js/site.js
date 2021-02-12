@@ -58,16 +58,17 @@ function updateTableColumnWidth(textBox1, textBox2, cssName, cascadeUpdate) {
 
 function setCSSRulePropertyValue( cssStyleName, cssPropertyName, newValue, propertySuffix)
 {
-    var textBoxValue = newValue.value;
-    var propertyNewValue = textBoxValue;
+    var actualNewValue = newValue.value;
+    var propertyNewValue = actualNewValue;
     if (propertySuffix)
     {
         propertyNewValue = propertyNewValue.concat( propertySuffix.toString() );
     }
-
-    console.log("percentage column width = ", textBoxValue);
-    console.log("document.styleSheets = ", document.styleSheets);
-    console.log("document.styleSheets.length = ", document.styleSheets.length);
+    console.log("CSS Style Name We are Trying to Set   = ", cssStyleName);
+    console.log("CSS Property Name We are going to Set = ", cssPropertyName);
+    console.log("New Property Value                    = ", propertyNewValue);
+    console.log("document.styleSheets                  = ", document.styleSheets);
+    console.log("document.styleSheets.length           = ", document.styleSheets.length);
     for (var i = 0; i < document.styleSheets.length; i++) {
         var sheet = document.styleSheets[i];
         //////////////////////////////////////////////////////
@@ -90,6 +91,8 @@ function setCSSRulePropertyValue( cssStyleName, cssPropertyName, newValue, prope
                             case 'MINWIDTH':
                             case 'MIN-WIDTH':
                                 sheet.cssRules[j].style.minWidth = propertyNewValue;
+                            case 'BACKGROUND-COLOR':
+                                sheet.cssRules[j].style.backcolor = propertyNewValue;
                         }
                     } else if (selTextU.includes("MINWIDTHCELL")) {
                         sheet.cssRules[j].style.width = propertyNewValue;
